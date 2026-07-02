@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@100..900&family=Oswald:wght@200..700&display=swap');
+
+:root {
+  /* Colors */
+  --color-bg-canvas: #1A1A12;
+  --color-bg-canvas-light: #26261A;
+  --color-surface: #222218;
+  --color-ink: #FFFFFF;
+  --color-ink-muted: #F5DFA0;
+  --color-accent: #F5A800;
+  --color-accent-soft: #FFD166;
+  --color-accent-deep: #FF6B00;
+  --color-cream: #FFF7E6;
+  --color-tile-purple: #3D2B00;
+
+  /* Section backgrounds — rotating palette */
+  --section-orange: #FF6B00;
+  --section-amber: #F5A800;
+  --section-cream: #FFF7E6;
+  --section-yellow: #FFD166;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+
+  /* Layout */
+  --section-pad-v: clamp(48px, 8vw, 96px);
+  --section-pad-h: clamp(20px, 5vw, 80px);
+
+  /* Type */
+  --font-display: 'Zalando', 'Oswald', sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-heading: 'Zalando', 'Inter', sans-serif;
+  --font-body: 'Zalando', 'Inter', sans-serif;
+  --font-label: 'Zalando', 'Inter', sans-serif;
+
+  --text-display: clamp(3.5rem, 14vw, 4.5rem);
+  --text-h2: 1.125rem;
+  --text-body: 0.9375rem;
+  --text-label: 0.6875rem;
+  --text-stat-number: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--section-orange);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-surface {
+  color: var(--color-ink);
+}
+
+.text-accent-soft {
+  color: var(--color-accent-soft);
+}
+
+/* Typography Utility Classes */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: var(--text-display);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--text-h2);
+}
+
+.font-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+.font-label {
+  font-family: var(--font-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--text-label);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-ink {
+  color: var(--color-ink);
+}
+
+.text-ink-muted {
+  color: var(--color-ink-muted);
+}
+
+.bg-canvas {
+  background-color: var(--color-bg-canvas);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-ink {
+  background-color: #0D0D08;
+}
+
+/* Layout Utilities */
+.section {
+  padding: var(--section-pad-v) var(--section-pad-h);
+  width: 100%;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Utility to allow text to overflow edges */
+.overflow-clip-x {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ── Section divider — angled chevron strip ── */
+.section-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  display: block;
+}
+
+.section-divider svg {
+  display: block;
+  width: 100%;
+}

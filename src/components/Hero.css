@@ -1,0 +1,49 @@
+.hero-video-section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: block;
+  line-height: 0;
+  position: relative;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark overlay that sits above the video */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: clamp(48px, 8vh, 96px);
+  z-index: 10;
+}
+
+/* Proceed button */
+.hero-proceed-btn {
+  background-color: #FF6B00;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 24px rgba(255, 107, 0, 0.45);
+  transition: box-shadow 0.2s ease;
+}
+
+.hero-proceed-btn:hover {
+  box-shadow: 0 6px 32px rgba(255, 107, 0, 0.65);
+}

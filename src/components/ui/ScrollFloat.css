@@ -1,0 +1,13 @@
+.scroll-float-container {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.scroll-float-text {
+  display: inline-block;
+}
+
+.scroll-float-word {
+  display: inline-block;
+}

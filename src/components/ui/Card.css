@@ -1,0 +1,9 @@
+.card {
+  padding: var(--space-lg);
+  overflow: hidden;
+}
+
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-full { border-radius: var(--radius-full); }

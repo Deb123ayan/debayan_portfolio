@@ -1,0 +1,27 @@
+.client-logos-section {
+  background-color: #FFF7E6;
+  padding: var(--space-xl) var(--section-pad-h);
+  border-top: 1px solid rgba(255, 107, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 107, 0, 0.15);
+}
+
+.logos-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.logos-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.logo-name {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  letter-spacing: 0.12em;
+  color: #FF6B00;
+  opacity: 0.6;
+}

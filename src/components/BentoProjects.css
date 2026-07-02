@@ -1,0 +1,203 @@
+.bento-section {
+  background-color: #FFF7E6;
+  padding: var(--section-pad-v) var(--section-pad-h);
+  position: relative;
+}
+
+.bento-header {
+  max-width: 100%;
+  margin: 0 0 var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.bento-label {
+  color: rgba(255, 107, 0, 0.7);
+  font-size: var(--text-label);
+  letter-spacing: 0.12em;
+}
+
+.bento-title {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  color: #FF6B00;
+  line-height: 0.9;
+}
+
+/* Grid */
+.bento-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: clamp(220px, 28vw, 360px);
+  gap: var(--space-md);
+}
+
+/* 2-column placement for desktop */
+.bento-card:nth-child(1) { grid-column: 1; }
+.bento-card:nth-child(2) { grid-column: 2; }
+.bento-card:nth-child(3) { grid-column: 1; }
+.bento-card:nth-child(4) { grid-column: 2; }
+.bento-card:nth-child(5) { grid-column: 1 / -1; }
+
+/* Card — just the title, fills the card */
+.bento-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center; /* Centered vertically */
+  justify-content: center; /* Centered horizontally */
+  overflow: hidden;
+  cursor: pointer;
+  transition: filter 0.3s ease, min-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 200px;
+}
+
+/* Dim non-hovered cards when any is hovered */
+@media (hover: hover) {
+  .bento-grid:has(.bento-card:hover) .bento-card:not(:hover) {
+    filter: brightness(0.6);
+  }
+}
+
+/* Dimmed state when another card is clicked */
+.bento-card--dimmed {
+  filter: brightness(0.6);
+  min-height: 120px; /* Reduce size of other cards */
+}
+
+.bento-card-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  transition: font-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  text-align: center;
+}
+
+/* On hover, title grows to flood the card */
+@media (hover: hover) {
+  .bento-card:hover .bento-card-title {
+    font-size: clamp(2.5rem, 9vw, 7rem);
+  }
+}
+
+/* ── Fullscreen overlay — rendered via portal on document.body ── */
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg);
+  animation: overlayIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: all;
+  overflow-y: auto;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.bento-overlay-tag {
+  display: inline-flex;
+  font-size: var(--text-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: var(--radius-full);
+  padding: 4px var(--space-md);
+  margin-bottom: var(--space-lg);
+  animation: fadeUp 0.4s ease 0.1s both;
+}
+
+.bento-overlay-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 10vw, 5rem);
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  animation: fadeUp 0.4s ease 0.05s both;
+}
+
+.bento-overlay-desc {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  line-height: 1.5;
+  max-width: 600px;
+  margin-top: var(--space-lg);
+  animation: fadeUp 0.4s ease 0.15s both;
+}
+
+.bento-overlay-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  animation: fadeUp 0.4s ease 0.2s both;
+}
+
+.bento-tech-pill {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: var(--radius-full);
+  padding: 4px var(--space-md);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .bento-card:nth-child(n) { grid-column: auto; grid-row: auto; }
+
+  .bento-overlay {
+    padding: var(--space-md);
+  }
+  .bento-card--expanded {
+    height: auto;
+  }
+  .bento-card--expanded .bento-overlay {
+    position: relative;
+    overflow-y: visible;
+  }
+  .bento-overlay-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  .bento-overlay-desc {
+    font-size: 0.9rem;
+    margin-top: var(--space-md);
+  }
+  .bento-overlay-tech {
+    margin-top: var(--space-md);
+  }
+}
