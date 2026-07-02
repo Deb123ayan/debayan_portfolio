@@ -50,7 +50,7 @@ const SkillCard = ({ service, index }: { service: typeof services[0], index: num
 };
 
 export const ServicesAccordion: React.FC = () => {
-  const { ref, isInView } = useScrollAnimation(0.1);
+  const { ref } = useScrollAnimation(0.1);
 
   return (
     <section id="skills" className="section services-section overflow-clip-x" ref={ref}>

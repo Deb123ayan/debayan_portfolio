@@ -15,7 +15,6 @@ const projects = [
 
 export const BentoProjects: React.FC = () => {
   const [activeId, setActiveId] = useState<number | null>(null);
-  const activeProject = projects.find((p) => p.id === activeId) ?? null;
   const { ref, isInView } = useScrollAnimation(0.1);
 
   return (
