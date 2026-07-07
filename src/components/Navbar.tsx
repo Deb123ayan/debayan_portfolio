@@ -20,10 +20,10 @@ export const Navbar: React.FC = () => {
       <div className="navbar-container">
         <motion.nav
           className="navbar"
-          initial={{ width: '100%', top: 0, borderRadius: '0px' }}
+          initial={{ width: '100%', marginTop: 0, borderRadius: '0px' }}
           animate={{
             width: scrolled ? '70%' : '100%',
-            top: scrolled ? '24px' : '0px',
+            marginTop: scrolled ? '24px' : '0px',
             borderRadius: scrolled ? '999px' : '0px',
             backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.75)' : 'transparent',
             color: scrolled ? '#15141A' : '#FFFFFF',

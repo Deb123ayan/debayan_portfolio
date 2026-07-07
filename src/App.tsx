@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { BentoProjects } from './components/BentoProjects';
+import { Experience } from './components/Experience';
 import { ServicesAccordion } from './components/ServicesAccordion';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
@@ -24,7 +25,9 @@ const App: React.FC = () => {
         <AboutSection />
         <SectionDivider from="#F5A800" to="#FFF7E6" />
         <BentoProjects />
-        <SectionDivider from="#FFF7E6" to="#FFD166" />
+        <SectionDivider from="#FFF7E6" to="#FF6B00" />
+        <Experience />
+        <SectionDivider from="#FF6B00" to="#FFD166" />
         <ServicesAccordion />
         <SectionDivider from="#FFD166" to="#F5A800" />
         <Testimonials />
