@@ -37,6 +37,7 @@ export const Contact: React.FC = () => {
         setResult("Error: " + (data.message || "Failed to send message."));
       }
     } catch (error) {
+      console.error(error);
       setResult("Error: Failed to send message.");
     }
   };
